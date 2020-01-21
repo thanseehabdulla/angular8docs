@@ -1,0 +1,11 @@
+<div *ngIf="watch">
+
+    <h2>{{watch.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{watch.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="watch.name" placeholder="name"/>
+      </label>
+    </div>
+  
+  </div>

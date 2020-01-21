@@ -1,0 +1,20 @@
+<p>{{watch.name | lowercase}} Details</p>
+<p>id:{{watch.id}}</p>
+<p>name:{{watch.name | uppercase}}</p>
+
+<h2>Form</h2>
+
+<div>
+    <input [(ngModel)]="watch.name" placeholder="name"/>
+</div>
+
+<ul class="heroes">
+    <!-- <li *ngFor="let watch of watches" (click)="onSelect(watch)" routerLink="/detail/{{watch.id}}"> -->
+    <li *ngFor="let watch of watches" routerLink="/detail/{{watch.id}}">
+      <span class="badge">{{watch.id}}</span> {{watch.name}}
+    </li>
+</ul>
+
+<h1 [class.selected]="watch === selectedWatch">Selected watch:{{selectedWatch.name}}</h1>
+
+<app-watch-details [watch]="selectedWatch"></app-watch-details>
